@@ -55,7 +55,7 @@ npm start
 
 ## 🍪 VPS Note
 
-YouTube/Instagram may block datacenter IPs. If downloads fail, add a `cookies.txt` file (exported from your browser) to the project folder. The app will use it automatically.
+YouTube/Instagram may block datacenter IPs. If downloads fail, one of the temporary solutions is to add a `cookies.txt` file (exported from your browser thats logged in to youtube and instagram) to the project folder. The app will use it automatically.
 
 ---
 
