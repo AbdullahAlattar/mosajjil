@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mosajjil:
     build: .
@@ -9,6 +7,7 @@ services:
     restart: unless-stopped
     volumes:
       - downloads:/app/downloads
+      - ./cookies.txt:/app/cookies.txt:ro
     environment:
       - NODE_ENV=production
       - PORT=3000

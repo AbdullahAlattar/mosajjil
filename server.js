@@ -31,6 +31,11 @@ const ytDlpPath = (() => {
 
 console.log(`Using yt-dlp at: ${ytDlpPath}`);
 
+// Check for cookies file
+const cookiesFile = path.join(__dirname, 'cookies.txt');
+const cookiesArg = fs.existsSync(cookiesFile) ? `--cookies "${cookiesFile}"` : '';
+if (cookiesArg) console.log('Using cookies file for authentication');
+
 // Sanitize URL to prevent command injection
 function sanitizeUrl(url) {
   return url.replace(/[;&|`$()]/g, '');
@@ -51,7 +56,7 @@ app.get('/api/info', async (req, res) => {
 
     // Get video info using yt-dlp
     const result = execSync(
-      `${ytDlpPath} --dump-json --no-playlist --no-warnings "${url}"`,
+      `${ytDlpPath} ${cookiesArg} --dump-json --no-playlist --no-warnings "${url}"`,
       { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024, timeout: 30000 }
     );
 
@@ -149,7 +154,7 @@ app.post('/api/download/start', async (req, res) => {
     const tempFile = path.join(downloadsDir, `${downloadId}.${ext}`);
 
     // Build yt-dlp command
-    const cmd = `${ytDlpPath} ${formatArg} --no-playlist --no-warnings --newline --progress-template "%(progress._percent_str)s %(progress._speed_str)s %(progress._eta_str)s" --concurrent-fragments 8 -o "${tempFile}" "${url}"`;
+    const cmd = `${ytDlpPath} ${cookiesArg} ${formatArg} --no-playlist --no-warnings --newline --progress-template "%(progress._percent_str)s %(progress._speed_str)s %(progress._eta_str)s" --concurrent-fragments 8 -o "${tempFile}" "${url}"`;
 
     console.log(`Starting download ${downloadId}`);
 
