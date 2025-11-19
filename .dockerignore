@@ -1,0 +1,13 @@
+node_modules
+downloads
+*.log
+.git
+.gitignore
+README.md
+.DS_Store
+.claude
+.vscode
+.idea
+.env
+.env.local
+Thumbs.db

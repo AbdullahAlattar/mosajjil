@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="description" content="تحميل فيديوهات من يوتيوب وانستقرام وتيك توك">
+  <title>تحميل الفيديوهات</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+      </div>
+      <h1>تحميل الفيديوهات</h1>
+      <p class="subtitle">يوتيوب • انستقرام • تيك توك • تويتر</p>
+    </header>
+
+    <main>
+      <form id="urlForm" class="url-form">
+        <div class="input-wrapper">
+          <input
+            type="url"
+            id="videoUrl"
+            placeholder="الصق رابط الفيديو هنا..."
+            required
+            autocomplete="off"
+            inputmode="url"
+          >
+          <button type="submit" id="fetchBtn">
+            <span class="btn-text">جلب الفيديو</span>
+            <span class="btn-loader"></span>
+          </button>
+        </div>
+      </form>
+
+      <div id="error" class="error-message"></div>
+
+      <div id="videoInfo" class="video-info hidden">
+        <div class="video-card">
+          <div class="thumbnail-wrapper">
+            <img id="thumbnail" src="" alt="صورة الفيديو">
+            <span id="duration" class="duration"></span>
+          </div>
+          <div class="video-details">
+            <h2 id="videoTitle"></h2>
+            <p id="videoAuthor" class="author"></p>
+          </div>
+        </div>
+
+        <div class="format-section">
+          <h3>اختر الجودة</h3>
+          <div id="formatList" class="format-list"></div>
+        </div>
+
+        <div id="progressContainer" class="progress-container hidden">
+          <div class="progress-header">
+            <span id="progressStatus">جاري التحميل...</span>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="progress-info">
+            <span id="progressSpeed"></span>
+            <span id="progressEta"></span>
+          </div>
+        </div>
+
+        <button id="downloadBtn" class="download-btn" disabled>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>تحميل الفيديو</span>
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <p class="made-by">صنع بواسطة عبدالله العطار</p>
+      <p class="ios-tip">للآيفون: بعد التحميل، افتح الملف من تطبيق الملفات ثم اضغط مشاركة > حفظ الفيديو</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
