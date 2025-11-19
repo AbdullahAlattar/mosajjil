@@ -1,12 +1,23 @@
-# Mosajjil مسجّل
+<p align="center">
+  <h1 align="center">Mosajjil مسجّل</h1>
+  <p align="center">Fast video downloader with Arabic UI</p>
+</p>
 
-Video downloader with Arabic interface and dark theme. Works great on mobile.
-
-**Supported:** YouTube • Instagram • TikTok • Twitter/X • Facebook • Vimeo • Reddit
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Node.js-16+-339933?logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
+</p>
 
 ---
 
-## Quick Start
+## 📦 Supported Platforms
+
+YouTube • Instagram • TikTok • Twitter/X • Facebook • Vimeo • Reddit
+
+---
+
+## ⚡ Quick Start with Docker
 
 ```bash
 git clone https://github.com/AbdullahAlattar/mosajjil.git
@@ -14,25 +25,26 @@ cd mosajjil
 docker-compose up --build -d
 ```
 
-Open `http://localhost:8080`
+Open **http://localhost:8080**
 
-For other devices on your network: `http://YOUR_IP:8080`
+Network access: `http://YOUR_IP:8080`
 
 ---
 
-## Features
+## ✨ Features
 
-- Real-time progress with speed and ETA
+- **Fast downloads** with concurrent connections
+- Real-time progress bar with speed & ETA
 - Multiple quality options (defaults to 720p)
-- iOS compatible (auto-converts Instagram/TikTok/Facebook to H.264)
-- Clean dark interface
+- iOS compatible — auto-converts to H.264
+- Dark interface, mobile-friendly
 - No accounts, no tracking
 
 ---
 
-## Without Docker
+## 🔧 Without Docker
 
-Requires Node.js 16+, yt-dlp, ffmpeg, and aria2.
+Requires: Node.js 16+, yt-dlp, ffmpeg, aria2
 
 ```bash
 npm install
@@ -41,6 +53,6 @@ npm start
 
 ---
 
-## License
+## 📄 License
 
-MIT
+MIT — use it however you want!
