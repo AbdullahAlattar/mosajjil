@@ -66,15 +66,32 @@ header {
 }
 
 h1 {
-  font-size: 1.75rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: var(--text);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title-en {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
 }
 
 .subtitle {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
+  opacity: 0.6;
 }
 
 main {
@@ -428,6 +445,19 @@ footer p:last-child {
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--text);
+}
+
+.github-link {
+  font-size: 0.85rem;
+  color: var(--primary);
+  opacity: 0.7;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.github-link:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .ios-tip {
