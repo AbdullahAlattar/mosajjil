@@ -309,7 +309,10 @@ button {
 }
 
 .format-option label {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60px;
   padding: 10px;
   border: 1px solid var(--border);
   border-radius: 8px;
