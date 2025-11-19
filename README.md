@@ -53,6 +53,12 @@ npm start
 
 ---
 
+## 🍪 VPS Note
+
+YouTube/Instagram may block datacenter IPs. If downloads fail, add a `cookies.txt` file (exported from your browser) to the project folder. The app will use it automatically.
+
+---
+
 ## 📄 License
 
 MIT — use it however you want!
