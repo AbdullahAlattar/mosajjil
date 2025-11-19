@@ -213,7 +213,7 @@ app.post('/api/download/start', async (req, res) => {
             const convertedFile = tempFile.replace('.mp4', '_converted.mp4');
 
             execSync(
-              `ffmpeg -i "${tempFile}" -c:v libopenh264 -c:a aac -b:a 128k -movflags +faststart -y "${convertedFile}"`,
+              `ffmpeg -i "${tempFile}" -c:v libx264 -c:a aac -b:a 128k -movflags +faststart -y "${convertedFile}"`,
               { maxBuffer: 50 * 1024 * 1024, timeout: 600000 }
             );
 
