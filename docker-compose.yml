@@ -7,7 +7,6 @@ services:
     restart: unless-stopped
     volumes:
       - downloads:/app/downloads
-      - ./cookies.txt:/app/cookies.txt
     environment:
       - NODE_ENV=production
       - PORT=3000

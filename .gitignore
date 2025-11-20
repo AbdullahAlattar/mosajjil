@@ -22,6 +22,3 @@ Thumbs.db
 # Environment
 .env
 .env.local
-
-# Cookies (sensitive)
-cookies.txt
