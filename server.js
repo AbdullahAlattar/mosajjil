@@ -36,8 +36,8 @@ const cookiesFile = path.join(__dirname, 'cookies.txt');
 const cookiesArg = fs.existsSync(cookiesFile) ? `--cookies "${cookiesFile}"` : '';
 if (cookiesArg) console.log('Using cookies file for authentication');
 
-// YouTube extractor args (empty - let yt-dlp use default)
-const ytExtractorArgs = '';
+// Extra args for better compatibility
+const extraArgs = '--no-check-certificates --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"';
 
 // Sanitize URL to prevent command injection
 function sanitizeUrl(url) {
@@ -59,7 +59,7 @@ app.get('/api/info', async (req, res) => {
 
     // Get video info using yt-dlp
     const result = execSync(
-      `${ytDlpPath} ${cookiesArg} ${ytExtractorArgs} --dump-json --no-playlist --no-warnings "${url}"`,
+      `${ytDlpPath} ${cookiesArg} ${extraArgs} --dump-json --no-playlist --no-warnings "${url}"`,
       { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024, timeout: 30000 }
     );
 
@@ -157,7 +157,7 @@ app.post('/api/download/start', async (req, res) => {
     const tempFile = path.join(downloadsDir, `${downloadId}.${ext}`);
 
     // Build yt-dlp command
-    const cmd = `${ytDlpPath} ${cookiesArg} ${ytExtractorArgs} ${formatArg} --no-playlist --no-warnings --newline --progress-template "%(progress._percent_str)s %(progress._speed_str)s %(progress._eta_str)s" --concurrent-fragments 8 -o "${tempFile}" "${url}"`;
+    const cmd = `${ytDlpPath} ${cookiesArg} ${extraArgs} ${formatArg} --no-playlist --no-warnings --newline --progress-template "%(progress._percent_str)s %(progress._speed_str)s %(progress._eta_str)s" --concurrent-fragments 8 -o "${tempFile}" "${url}"`;
 
     console.log(`Starting download ${downloadId}`);
 
