@@ -36,8 +36,8 @@ const cookiesFile = path.join(__dirname, 'cookies.txt');
 const cookiesArg = fs.existsSync(cookiesFile) ? `--cookies "${cookiesFile}"` : '';
 if (cookiesArg) console.log('Using cookies file for authentication');
 
-// YouTube extractor args - use mweb client which supports cookies
-const ytExtractorArgs = '--extractor-args "youtube:player_client=mweb"';
+// YouTube extractor args (empty - let yt-dlp use default)
+const ytExtractorArgs = '';
 
 // Sanitize URL to prevent command injection
 function sanitizeUrl(url) {
